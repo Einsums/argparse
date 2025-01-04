@@ -13,7 +13,7 @@ project(argparse
         LANGUAGES CXX
 )
 
-option(ARGPARSE_INSTALL "Include an install target" ${ARGPARSE_IS_TOP_LEVEL})
+# option(ARGPARSE_INSTALL "Include an install target" ${ARGPARSE_IS_TOP_LEVEL})
 option(ARGPARSE_BUILD_TESTS "Build tests" ${ARGPARSE_IS_TOP_LEVEL})
 option(ARGPARSE_BUILD_SAMPLES "Build samples" OFF)
 
@@ -36,7 +36,7 @@ if(ARGPARSE_BUILD_TESTS)
   add_subdirectory(test)
 endif()
   
-if(ARGPARSE_INSTALL)
+# if(ARGPARSE_INSTALL)
   install(TARGETS argparse EXPORT argparseConfig)
   install(EXPORT argparseConfig
           NAMESPACE argparse::
@@ -95,6 +95,6 @@ if(ARGPARSE_INSTALL)
   install(FILES "${PKG_CONFIG_FILE_NAME}"
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
   )
-endif()
+# endif()
 
 include(CPack)
